@@ -1,0 +1,24 @@
+﻿@model ModelHierarchyApp.Models.ComponentViewModel
+
+@{
+    // Set layout to null as no header/footer/layout is needed for this view
+    Layout = null;
+
+    // Get the title from the ViewData, or use a default value if not set
+    var title = ViewData["Title"] as string ?? "Model Hierarchy";
+}
+
+<!-- Display the title of the page -->
+<h2>@title</h2>
+
+<!-- Display the root component name -->
+<h3>@Model.RootComponentName</h3>
+
+<!-- List all the component names retrieved from the Model -->
+<ul>
+    @foreach (var name in Model.ComponentNames)
+    {
+        <!-- Display each component name inside a list item -->
+        <li>@name</li>
+    }
+</ul>
