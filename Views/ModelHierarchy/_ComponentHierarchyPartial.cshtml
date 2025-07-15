@@ -1,0 +1,46 @@
+﻿@model ModelHierarchyApp.Models.ComponentViewModel
+
+<!--
+    _ComponentHierarchyPartial.cshtml
+    ---------------------------------
+    Partial view for displaying the hierarchy of a selected Fusion component.
+    - Renders the root component name.
+    - If hierarchy data is present, renders a jsTree-based hierarchy visualization.
+    - Uses jQuery and jsTree for interactive tree rendering.
+    - Expands all nodes on load for better visibility.
+-->
+
+<h3>Component: @Model?.RootComponentName</h3> 
+
+@if (!string.IsNullOrEmpty(Model?.HierarchyText))
+{
+    <!--
+        Component Hierarchy Section
+        --------------------------
+        - Displays the component hierarchy using jsTree.
+        - The hierarchy data is passed as JSON from the model.
+        - All nodes are expanded after the tree is initialized.
+    -->
+    <p><strong>Component Hierarchy:</strong></p>
+    <div id="hierarchy-tree"></div>
+
+    <script>
+        $(function () {
+            // Parse the hierarchy data from the model and initialize jsTree
+            const componentData = @Html.Raw(Model.HierarchyText);
+            $('#hierarchy-tree').jstree({
+                core: {
+                    data: componentData,
+                    themes: {
+                        dots: true,
+                        icons: false // No icons in right panel
+                    }
+                },
+                plugins: ['wholerow']
+            }).on('ready.jstree', function () {
+                // Expand all nodes after the tree is ready
+                $('#hierarchy-tree').jstree('open_all');
+            });
+        });
+    </script>
+}
