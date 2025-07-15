@@ -4,7 +4,7 @@
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://opensource.org/licenses/MIT)
 
 
-**APS API:** [![oAuth2](https://img.shields.io/badge/oAuth2-v2-green.svg)](https://aps.autodesk.com/en/docs/oauth/v1/developers_guide/overview/)
+**APS API:** [![oAuth2](https://img.shields.io/badge/oAuth2-v2-green.svg)](https://aps.autodesk.com/en/docs/oauth/v2/developers_guide/overview/)
 [![Manufacturing Data Model API](https://img.shields.io/badge/Manufacturing%20Data%20Model-v2-orange)](https://aps.autodesk.com/developer/overview/manufacturing-data-model-api)
 # 📚 Read the Complete Model Hierarchy of a Fusion Design
 
